@@ -11,15 +11,13 @@ function route(app) {
   app.use('/courses', coursesRouter);
 
   // New page
-  app.get('/news/:slug', newsRouter);
-
-  app.get('/news', newsRouter);
+  app.use('/news', newsRouter);
 
   // Search page
-  app.get('/search', siteRouter);
+  app.use('/search', siteRouter);
 
   // Home page
-  app.get('/', siteRouter);
+  app.use('/', siteRouter);
 }
 
 module.exports = route;
