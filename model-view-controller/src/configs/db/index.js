@@ -4,7 +4,7 @@ async function connect() {
   try {
     mongoose.set('strictQuery', false);
     await mongoose.connect(
-      'mongodb+srv://somehow:binhyen1991@cluster0.4i9h2lh.mongodb.net/f8_education_dev?retryWrites=true&w=majority'
+      `mongodb+srv://${process.env.ID}:${process.env.PASSWORD}@cluster0.4i9h2lh.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`
     );
     console.log('connect to success');
   } catch (err) {
